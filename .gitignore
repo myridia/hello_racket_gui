@@ -31,5 +31,6 @@ desktop.ini
 
 # Build / dependency output
 /bin/
+/dist/
 compiled/
 /doc/

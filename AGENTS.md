@@ -14,7 +14,7 @@ The window shows “Hello, world!” with a **Quit** button.
 - `ask.sh` — task runner menu
 - `ask.d/lib.sh` — shared task helpers
 - `ask.d/setup.sh` — task 1: check and install Racket requirements
-- `ask.d/build.sh` — task 2: build with `raco exe`
+- `ask.d/build.sh` — task 2: build with `raco exe` + `raco distribute`
 - `ask.d/run.sh` — task 3: run with `racket`
 - `README.md` — project title, logo, and run command
 - `AGENTS.md` — this project guide
@@ -27,7 +27,7 @@ The window shows “Hello, world!” with a **Quit** button.
 ./ask.sh
 ```
 
-Task 1 checks for `racket` and `raco` and installs Racket when missing: `apt-get`, `dnf`, or `pacman` on Linux; Homebrew on macOS; `winget`, Chocolatey, or Scoop under a POSIX shell on Windows (Git Bash/MSYS/Cygwin). Task 2 builds `bin/hello_racket_gui`. Task 3 runs `main.rkt` directly.
+Task 1 checks for `racket` and `raco` and installs Racket when missing: `apt-get`, `dnf`, or `pacman` on Linux; Homebrew on macOS; `winget`, Chocolatey, or Scoop under a POSIX shell on Windows (Git Bash/MSYS/Cygwin). Task 2 builds a GUI executable with `raco exe --gui` and a library-inclusive distribution in `dist/hello_racket_gui/` with `raco distribute`; Windows adds `--embed-dlls`. Task 3 runs `main.rkt` directly.
 
 Direct command:
 ```sh
