@@ -1,7 +1,35 @@
+# Backup / editor swap files
+*~
+~*
+#*#
+*#
+.#*
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Logs
+*.log
+
+# OS
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Build / dependency output
+/bin/
 compiled/
 /doc/
-*~
-*.bak
-\#*
-.\#*

@@ -1,23 +1,38 @@
 # AGENTS.md — hello_racket_gui
 
 ## What this is
-Small starter repository for a Racket GUI program. The name indicates a `hello world`-style desktop app built with Racket's GUI libraries.
+Small Racket GUI hello-world program built with `racket/gui`.
 
-Current state: repository metadata only — no Racket source code, no build script, and no task runner yet.
+The window shows “Hello, world!” with a **Quit** button.
 
 ## Stack
-- Racket (planned; `racket/gui` is the expected GUI library)
-- No runtime dependencies documented yet
+- Racket
+- `racket/gui`
 
 ## Structure
-- `README.md` — project title and logo
+- `main.rkt` — GUI entry point
+- `ask.sh` — task runner menu
+- `ask.d/lib.sh` — shared task helpers
+- `ask.d/setup.sh` — task 1: check and install Racket requirements
+- `ask.d/build.sh` — task 2: build with `raco exe`
+- `ask.d/run.sh` — task 3: run with `racket`
+- `README.md` — project title, logo, and run command
 - `AGENTS.md` — this project guide
 - `LICENSE` — GNU GPL v3
-- `.gitignore` — Racket/editor ignore rules
+- `.gitignore` — Racket/editor and build-output ignore rules
 - `hello_racket_gui.svg` — README logo
 
 ## Run
-No entry point exists yet. Once a Racket source file is added, document the exact command here.
+```sh
+./ask.sh
+```
+
+Task 1 checks for `racket` and `raco` and installs Racket when missing: `apt-get`, `dnf`, or `pacman` on Linux; Homebrew on macOS; `winget`, Chocolatey, or Scoop under a POSIX shell on Windows (Git Bash/MSYS/Cygwin). Task 2 builds `bin/hello_racket_gui`. Task 3 runs `main.rkt` directly.
+
+Direct command:
+```sh
+racket main.rkt
+```
 
 ## Conventions
 - Keep the README logo as its first line.
