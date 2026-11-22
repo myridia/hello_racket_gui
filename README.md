@@ -25,4 +25,17 @@ racket main.rkt
 
 ## Build output
 
-Task 2 creates a Racket distribution in `dist/hello_racket_gui/` with the executable and the runtime libraries it needs. Copy that directory to another machine with the same OS and CPU architecture. On Windows, Racket DLLs are embedded into the executable.
+Task 2 creates a Racket distribution in `dist/hello_racket_gui/` containing the executable and the runtime libraries it needs:
+
+| Path | Size |
+|------|------|
+| `bin/hello_racket_gui` | 23 MB |
+| `lib/` | 45 MB |
+| Whole distribution | 68 MB |
+
+The runtime lives in separate shared libraries under `lib/`, so copy the **whole** directory and keep the `bin/` + `lib/` layout intact — the executable finds its libraries by relative path. No Racket install is needed on the target machine, but the OS and CPU architecture must match the build machine. On Windows, Racket DLLs are embedded into the executable.
+
+| Project | Distribution | Size |
+|---------|--------------|------|
+| Racket | `bin/` executable + `lib/` runtime libraries | ~68 MB |
+| McCLIM / SBCL | one self-contained executable | ~22 MB |
